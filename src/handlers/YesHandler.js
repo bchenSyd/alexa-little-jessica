@@ -1,5 +1,5 @@
 const { HELP_REPROMPT } = require("../common/messages");
-const { getFact } = require('../common')
+const { buildFact } = require('../common')
 module.exports = {
   canHandle(handlerInput) {
     return (
@@ -18,7 +18,7 @@ module.exports = {
       }
     } = handlerInput;
     console.log(`YesHandler is handling ${intentName}`);
-    const speakOutput = getFact();
+    const speakOutput = buildFact();
     return handlerInput.responseBuilder
       .speak(speakOutput)
       .reprompt(HELP_REPROMPT)

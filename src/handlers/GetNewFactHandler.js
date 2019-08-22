@@ -1,5 +1,5 @@
 const { SKILL_NAME, HELP_REPROMPT } = require("../common/messages");
-const { getFact } = require("../common");
+const { buildFact } = require("../common");
 
 module.exports = {
   canHandle(handlerInput) {
@@ -11,7 +11,7 @@ module.exports = {
     );
   },
   handle(handlerInput) {
-    const speechOutput = getFact();
+    const speechOutput = buildFact();
     console.log(`handle result ${speechOutput}`);
     return handlerInput.responseBuilder
       .speak(speechOutput)
