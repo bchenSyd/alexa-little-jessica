@@ -11,6 +11,7 @@ const SessionEndedHandler = require('./src/handlers/SessionEndedHandler');
 
 const HelpHandler = require('./src/handlers/HelpHandler');
 const ErrorHandler = require('./src/handlers/ErrorHandler');
+const FallbackHandler = require('./src/handlers/FallbackHandler');
 
 const skillBuilder = Alexa.SkillBuilders.standard();
 
@@ -20,7 +21,8 @@ exports.handler = skillBuilder
     YesHandler,
     SessionEndedHandler,
     SessionEndedRequestHandler,
-    HelpHandler
+    HelpHandler,
+    FallbackHandler
   )
   .addErrorHandlers(ErrorHandler)
   .lambda();
